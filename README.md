@@ -30,7 +30,9 @@ Create a partial `_background.scss` in /scss/background to style the Background 
 
 Create a `_base.scss` in /scss/base to set up the default base styling for the application. (margin, box-style..,)
 
+Add [fonts](https://fonts.google.com/specimen/Raleway?query=ral) styling to the application from google-fonts
 
+Style the Navbar & Footer after setting the base format for the App page (navbar, wrapper, footer) in \_app.scss
 
 ## Learn More
 
