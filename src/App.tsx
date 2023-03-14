@@ -8,8 +8,8 @@ function App() {
 			<Background />
 
 			<div className="app">
-				<Wrapper />
 				<Navbar />
+				<Wrapper />
 				<Footer />
 			</div>
 		</div>
