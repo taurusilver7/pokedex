@@ -22,7 +22,13 @@ Add /components, /pages, /scss, /utils & /section directories to the source dire
 
 Create the pages necessary to navigate the application and initiate the required routes in the App component. The application pages include a Search, Pokemon, MyList, About & Compare pages.
 
-Create & style a higher-order wrapper component for application background layout.
+Create & style a higher-order wrapper component `Background` for application background layout. Style the blurred background in `index.scss`
+
+Organize the /scss directory with /base, /components, /pages, /sections, /utils directories to separate the component stylings from the sections.., Import all to the main /scss/index.scss
+
+Create a partial `_background.scss` in /scss/background to style the Background component.
+
+Create a `_base.scss` in /scss/base to set up the default base styling for the application. (margin, box-style..,)
 
 
 
