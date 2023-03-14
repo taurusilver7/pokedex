@@ -20,7 +20,9 @@ Scaffold a starter project from the available script with necessary templates an
 
 Add /components, /pages, /scss, /utils & /section directories to the source directory to better navigate the application with best practices.
 
-Create the pages necessary to navigate the application and initiate the required routes in the App component.
+Create the pages necessary to navigate the application and initiate the required routes in the App component. The application pages include a Search, Pokemon, MyList, About & Compare pages.
+
+Create & style a higher-order wrapper component for application background layout.
 
 
 
