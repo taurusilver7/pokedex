@@ -1,11 +1,19 @@
-import React from 'react';
+import { Background } from "./components";
+import "./scss/index.scss";
+import { Footer, Navbar, Wrapper } from "./sections";
 
 function App() {
-  return (
-    <div className="App">
-     App Component
-    </div>
-  );
+	return (
+		<div className="main-container">
+			<Background />
+
+			<div className="app">
+				<Wrapper />
+				<Navbar />
+				<Footer />
+			</div>
+		</div>
+	);
 }
 
 export default App;
