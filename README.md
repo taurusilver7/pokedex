@@ -50,7 +50,9 @@ The useAppSelector() hook is for getting the state data from the store while the
 
 Get initialPokemon data & a random 20 Pokemon data for the search page, with useEffect & redux hooks.
 
-Create extraReducers() to perform the action after the request fulfilment status.
+Create extraReducers() to update the state values with the action payload after the request fulfilment status.
+
+Create a Pokemon card component to render the search results or random pokemon results in the search page.
 
 ## Learn More
 
