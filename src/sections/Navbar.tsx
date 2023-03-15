@@ -19,7 +19,7 @@ const Navbar = () => {
 			route: "/pokemon",
 		},
 		{
-			name: "My List",
+			name: "List",
 			route: "/list",
 		},
 	];
