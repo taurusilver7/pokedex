@@ -1,11 +1,15 @@
 // Type interface for the api responses.
 
-export interface AppTypeInitialState {}
+// Type for AppSlice Initial State Values
+export interface AppInitialStateType {}
 
-export interface PokemonTypeInitialState {
+// Type for the PokemonSlice Initial State Values.
+export interface PokemonInitialStateType {
 	allPokemon: undefined | genericPokemonType[];
 	randomPokemon: undefined | generatedPokemonType[];
 }
+
+// For generating random Pokemon results in the search page at render. Type for getPokemonData for random pokemon.
 
 export interface genericPokemonType {
 	name: string;
@@ -16,10 +20,11 @@ export interface generatedPokemonType {
 	name: string;
 	id: number;
 	image: string;
-	types: pokemonTypeInterface[];
+	types: pokemonInterfaceType[];
 }
 
-export interface pokemonTypeInterface {
+// Pokemon interface type for transistion between generic & generated pokemon type.
+export interface pokemonInterfaceType {
 	[key: string]: {
 		image: string;
 		resistance: string[];
