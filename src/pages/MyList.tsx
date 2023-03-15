@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
+import { Wrapper } from "../sections";
 
 const MyList = () => {
-  return (
-    <div>MyList</div>
-  )
-}
+	return <div>MyList</div>;
+};
 
-export default MyList
+export default Wrapper(MyList);
