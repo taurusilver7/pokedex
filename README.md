@@ -32,7 +32,19 @@ Create a `_base.scss` in /scss/base to set up the default base styling for the a
 
 Add [fonts](https://fonts.google.com/specimen/Raleway?query=ral) styling to the application from google-fonts
 
-Style the Navbar & Footer after setting the base format for the App page (navbar, wrapper, footer) in \_app.scss
+Style the Navbar & Footer after setting the base format for the App page (navbar, wrapper, footer) in \_app.scss.
+
+Initiate the react-router navigation, and assign the paths for pages & navigation re-routes.
+
+Convert the Wrapper section to a higher-order component such that the layout & styles of the wrapper surrounds the pages.
+
+To populate the pages with the api data, setup a redux toolkit, to arrange a global store to pluck the information from, disregarding the component position, heirarchy, and order.
+
+Create two redux slices in /app directory (AppSlice & PokemonSlice). A slice decouples the response data into required chunks of objects of same category for extensive usage.
+
+Pull the required pokemon data from [pokeapi](https://pokeapi.co/), an easily accessible, modern restful API service.
+
+Create a reducer function that uses the createAsyncThunk to fetch the initial response data from the API
 
 ## Learn More
 
