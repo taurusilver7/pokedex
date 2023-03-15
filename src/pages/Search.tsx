@@ -2,11 +2,12 @@ import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { getInitalData } from "../app/reducers/getInitialData";
 import { getPokemonData } from "../app/reducers/getPokemonData";
+import { CardGrid } from "../components";
 import { Wrapper } from "../sections";
 
 const Search = () => {
 	const dispatch = useAppDispatch();
-	const { allPokemon } = useAppSelector(({ pokemon }) => pokemon);
+	const { allPokemon, randomPokemon } = useAppSelector(({ pokemon }) => pokemon);
 
 	// GET the initial reducer state values from the store
 	useEffect(() => {
@@ -25,7 +26,12 @@ const Search = () => {
 		}
 	}, [allPokemon, dispatch]);
 
-	return <div>Search results page</div>;
+	return <>
+		<div className="search">
+			<input type="text" name="" id="" />
+			<CardGrid pokemons={randomPokemon} />
+		</div>
+	</>;
 };
 
 export default Wrapper(Search);
