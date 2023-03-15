@@ -1,8 +1,7 @@
-// Get initial pokemon data from the api
+// Get random pokemon data from the api
 
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { pokemonRoute } from "../../utils/Constants";
 import { defaultImages, images } from "../../utils/pokemonImg";
 import { pokemonTypes } from "../../utils/pokemonTypes";
 import { generatedPokemonType, genericPokemonType } from "../../utils/Types";
@@ -42,7 +41,7 @@ export const getPokemonData = createAsyncThunk(
 				}
 			}
 			// console.log(pokemonData)
-         return pokemonData;
+			return pokemonData;
 		} catch (error) {
 			console.log(error);
 		}
