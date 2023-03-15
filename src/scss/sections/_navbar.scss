@@ -20,10 +20,10 @@ nav {
 		border: 0.5px solid rgba(255, 255, 255, 0.23);
 		border-top: none;
 		border-bottom: none;
-		padding: 0 20rem;
+		padding: 0 auto;
 		ul {
 			display: grid;
-			grid-template-columns: repeat(5, 20%);
+			grid-template-columns: repeat(4, 25%);
 			height: 100%;
 			list-style-type: none;
 			z-index: 1;
@@ -31,6 +31,7 @@ nav {
 			a {
 				display: flex;
 				color: #fff;
+				margin: 0 10px;
 				justify-content: center;
 				align-items: center;
 				border-bottom: 1px solid transparent;
@@ -53,12 +54,27 @@ nav {
 	bottom: 0;
 	left: 0;
 	background-color: white;
-	width: 20%;
-	height: calc(4px / 2);
+	width: 25%;
+	height: calc(5px / 2);
 	mix-blend-mode: initial;
 	pointer-events: none;
 	transition: 0.5s ease-in-out;
 	&:nth-child(1) {
 		transition: calc(0.5s * 1.2) ease-in-out;
+	}
+}
+@media screen and (min-width: 660px) {
+	.data {
+		padding: 0 5rem;
+	}
+}
+@media screen and (min-width: 780px) {
+	.data {
+		padding: 0 10rem;
+	}
+}
+@media screen and (min-width: 1024px) {
+	.data {
+		padding: 0 20rem;
 	}
 }
