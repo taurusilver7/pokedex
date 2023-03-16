@@ -52,7 +52,9 @@ Get initialPokemon data & a random 20 Pokemon data for the search page, with use
 
 Create extraReducers() to update the state values with the action payload after the request fulfilment status.
 
-Create a Pokemon card component to render the search results or random pokemon results in the search page.
+Create a Pokemon card component to render the search results or random pokemon results in the search page. Add the compare & list buttons based on the pokemon-list page data availability. Render the buttons with conditional render.
+
+
 
 ## Learn More
 
