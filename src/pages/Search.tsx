@@ -7,7 +7,9 @@ import { Wrapper } from "../sections";
 
 const Search = () => {
 	const dispatch = useAppDispatch();
-	const { allPokemon, randomPokemon } = useAppSelector(({ pokemon }) => pokemon);
+	const { allPokemon, randomPokemon } = useAppSelector(
+		({ pokemon }) => pokemon
+	);
 
 	// GET the initial reducer state values from the store
 	useEffect(() => {
@@ -20,18 +22,24 @@ const Search = () => {
 			const clonedPokemon = [...allPokemon];
 			const randomPokemonId = clonedPokemon
 				.sort(() => Math.random() - Math.random())
-				.slice(0, 20);
+				.slice(0, 21);
 			// console.log(randomPokemonId);
-			dispatch(getPokemonData(randomPokemonId))
+			dispatch(getPokemonData(randomPokemonId));
 		}
 	}, [allPokemon, dispatch]);
 
-	return <>
-		<div className="search">
-			<input type="text" name="" id="" />
-			<CardGrid pokemons={randomPokemon} />
-		</div>
-	</>;
+	return (
+		<>
+			<div className="search">
+				<input
+					type="text"
+					className="searchbar"
+					placeholder="Search Pokemon..."
+				/>
+				<CardGrid pokemons={randomPokemon!} />
+			</div>
+		</>
+	);
 };
 
 export default Wrapper(Search);
