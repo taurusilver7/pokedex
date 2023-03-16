@@ -1,6 +1,7 @@
 .card-grid-container {
 	max-height: 80vh;
 	overflow-y: scroll;
+	padding-bottom: 2rem;
 	.card-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -14,10 +15,15 @@
 			justify-content: center;
 			align-items: center;
 			background-color: rgba(255, 255, 255, 0.125);
+			backdrop-filter: blur(10px);
 			border-radius: 1rem;
 			padding: 1rem;
 			box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 			position: relative;
+			&:hover {
+				backdrop-filter: invert(5%);
+				-webkit-backdrop-filter: invert(5%);
+			}
 			svg {
 				transition: 0.3s ease-in-out;
 				&:hover {
@@ -30,6 +36,12 @@
 				left: 0.8rem;
 				font-size: 1rem;
 				cursor: pointer;
+				.trash {
+					color: #e21b5a;
+				}
+				.plus {
+					color: #27af0f;
+				}
 			}
 			&-compare {
 				position: absolute;
@@ -82,7 +94,7 @@
 	.card {
 		width: 200px;
 	}
-   .card-image {
-      height: 10rem;
-   }
+	.card-image {
+		height: 10rem;
+	}
 }
