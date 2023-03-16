@@ -1,7 +1,7 @@
 //@ts-nocheck
 
 const fetchImg = (context: string) => {
-	const imgs = {};
+	const images = {};
 	const cache = {};
 
 	function importAll(inp) {
@@ -13,9 +13,9 @@ const fetchImg = (context: string) => {
 		let key = module[0].split("");
 		key.splice(0, 2);
 		key.splice(-4, 4);
-		imgs[[key.join("")]] = module[1];
+		images[[key.join("")]] = module[1];
 	});
-	return imgs;
+	return images;
 };
 
 export const images = fetchImg(
