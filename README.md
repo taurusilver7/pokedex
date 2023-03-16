@@ -68,6 +68,8 @@ Create reducer functions `addToCompare` & `removeFromCompare` to add/remove poke
 
 Dispatch the actions `addToCompare` in Search page on pokemon card Compare button click-event.
 
+Setup the Toast notification in AppSlice reducer actions (setToast & clearToast) & add a toast when a pokemon is added to compare from Search Page.
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
