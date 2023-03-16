@@ -7,6 +7,7 @@ export interface AppInitialStateType {}
 export interface PokemonInitialStateType {
 	allPokemon: undefined | genericPokemonType[];
 	randomPokemon: undefined | generatedPokemonType[];
+	compareQueue: generatedPokemonType[];
 }
 
 // For generating random Pokemon results in the search page at render. Type for getPokemonData for random pokemon.
