@@ -54,7 +54,19 @@ Create extraReducers() to update the state values with the action payload after 
 
 Create a Pokemon card component to render the search results or random pokemon results in the search page. Add the compare & list buttons based on the pokemon-list page data availability. Render the buttons with conditional render.
 
+Based on the page location (with useLocation() hook), render the corresponding buttons & their respective functions in a card.
 
+Create a custom search function that takes in the input changes from the input element, and requests the API for response to populate in CardGrid.
+
+But the rapid change events from input element will increase the API call rate & eat up one's reserves with a few searches. Create a debounce utility function to reduce the number of api calls from the search page.
+
+### Compare
+
+Add the variable `compareQueue` to the intialState in PokeSlice & add the corresponding interface in the Types.
+
+Create reducer functions `addToCompare` & `removeFromCompare` to add/remove pokemon to compare page. Check if there are pokemon in the compare to avoid adding it multiple times. Condition the addition with element index from the initial State compareQueue array.
+
+Dispatch the actions `addToCompare` in Search page on pokemon card Compare button click-event.
 
 ## Learn More
 
