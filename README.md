@@ -70,6 +70,10 @@ Dispatch the actions `addToCompare` in Search page on pokemon card Compare butto
 
 Setup the Toast notification in AppSlice reducer actions (setToast & clearToast) & add a toast when a pokemon is added to compare from Search Page.
 
+Populate the compare page with a container to add pokemon to compare at its initial state. If a pokemon is already added to compareQueue global state, replace the blank container with the pokemon data.
+
+
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
