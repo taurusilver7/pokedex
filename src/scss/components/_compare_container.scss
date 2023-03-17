@@ -17,9 +17,13 @@
 			align-items: center;
 			border: none;
 			background-color: var(--accent);
+			transition: all 0.2s;
 			svg {
 				font-size: 5rem;
 				color: whitesmoke;
+			}
+			&:hover {
+				transform: scale(1.05);
 			}
 		}
 		h3 {
@@ -156,7 +160,7 @@
 	.pokemon-type {
 		width: 50%;
 	}
-   .pokemon-type-image {
-      width: 50%;
-   }
+	.pokemon-type-image {
+		width: 50%;
+	}
 }
