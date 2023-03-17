@@ -1,7 +1,9 @@
 // Type interface for the api responses.
 
 // Type for AppSlice Initial State Values
-export interface AppInitialStateType {}
+export interface AppInitialStateType {
+	toasts: string[];
+}
 
 // Type for the PokemonSlice Initial State Values.
 export interface PokemonInitialStateType {
