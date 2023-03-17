@@ -3,6 +3,9 @@
 // Type for AppSlice Initial State Values
 export interface AppInitialStateType {
 	toasts: string[];
+	userInfo: undefined | { email: string };
+	isLoading: boolean;
+	currentPokemonTab: string;
 }
 
 // Type for the PokemonSlice Initial State Values.
@@ -26,6 +29,19 @@ export interface generatedPokemonType {
 	types: pokemonInterfaceType[];
 }
 
+// Current Pokemon Interface type
+export interface currentPokemonType {
+	id: number;
+	name: string;
+	types: pokemonInterfaceType[];
+	images: string;
+	stats: pokemonStatsType[];
+	encounters: string[];
+	evolutionLevel: number;
+	evolution: { level: number; pokemon: { name: string; url: string } }[];
+	pokemonAbilities: { abilities: string[]; moves: string[] };
+}
+
 // Pokemon interface type for transistion between generic & generated pokemon type.
 export interface pokemonInterfaceType {
 	[key: string]: {
@@ -45,7 +61,6 @@ export interface pokemonStatsType {
 	name: string;
 	value: string;
 }
-
 
 export type pokemonStatType =
 	| "vulnerable"
