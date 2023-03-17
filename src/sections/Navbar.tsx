@@ -11,12 +11,12 @@ const Navbar = () => {
 			route: "/search",
 		},
 		{
-			name: "Compare",
-			route: "/compare",
-		},
-		{
 			name: "Pokemon",
 			route: "/pokemon",
+		},
+		{
+			name: "Compare",
+			route: "/compare",
 		},
 		{
 			name: "List",
