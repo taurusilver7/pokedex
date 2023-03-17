@@ -1,0 +1,16 @@
+.compare {
+	display: grid;
+	grid-template-columns: 49% 49%;
+	height: 100%;
+	width: 100%;
+	padding: 1rem;
+	gap: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+	.compare {
+		display: flex;
+      flex-direction: column;
+	}
+}
+
