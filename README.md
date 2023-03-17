@@ -76,6 +76,16 @@ Populate the compare block with the pokemon stats & images. Create a stats array
 
 Create the action buttons that navigate to different pages in the application or perform CRUD operation on the pokemon in an accound.
 
+## List
+
+To add a compared pokemon or search result pokemon to the personalized to list, setup a storage in firebase.
+
+Create a project & set up the real-time database & google-authentication to the project before integrating it to the application.
+
+The List page has either the list of the pokemon a user has added, or the login page, if the user was not authenticated yet.
+
+Add a global state `userInfo` in the AppSlice, and create a reducer function to set the user status & email authentication.
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
