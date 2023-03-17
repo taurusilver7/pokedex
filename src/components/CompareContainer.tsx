@@ -1,5 +1,7 @@
-import React from "react";
 import { FaPlus } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "../app/hooks";
+import { removeFromCompare } from "../app/slices/PokeSlice";
 import { pokemonTypes } from "../utils";
 import {
 	pokemonInterfaceType,
@@ -14,6 +16,8 @@ const CompareContainer = ({
 	pokemon?: userPokemonType;
 	isEmpty?: boolean;
 }) => {
+	const navigate = useNavigate();
+	const dispatch = useAppDispatch();
 	const createStatsArray = (
 		types: pokemonInterfaceType[],
 		statType: pokemonStatType
@@ -38,8 +42,8 @@ const CompareContainer = ({
 				<h4 className="pokemon-type-title">Strength</h4>
 				<div className="pokemon-type-icons">
 					{createStatsArray(pokemon?.types!, "strength").map(
-						(stat: { image: string }) => (
-							<div className="pokemon-type">
+						(stat: { image: string }, index) => (
+							<div key={index} className="pokemon-type">
 								<img
 									src={stat.image}
 									alt=""
@@ -54,8 +58,8 @@ const CompareContainer = ({
 				<h4 className="pokemon-type-title">Weakness</h4>
 				<div className="pokemon-type-icons">
 					{createStatsArray(pokemon?.types!, "weakness").map(
-						(stat: { image: string }) => (
-							<div className="pokemon-type">
+						(stat: { image: string }, index) => (
+							<div key={index} className="pokemon-type">
 								<img
 									src={stat.image}
 									alt=""
@@ -70,8 +74,8 @@ const CompareContainer = ({
 				<h4 className="pokemon-type-title">Resistance</h4>
 				<div className="pokemon-type-icons">
 					{createStatsArray(pokemon?.types!, "resistance").map(
-						(stat: { image: string }) => (
-							<div className="pokemon-type">
+						(stat: { image: string }, index) => (
+							<div key={index} className="pokemon-type">
 								<img
 									src={stat.image}
 									alt=""
@@ -86,8 +90,8 @@ const CompareContainer = ({
 				<h4 className="pokemon-type-title">Vulnerable</h4>
 				<div className="pokemon-type-icons">
 					{createStatsArray(pokemon?.types!, "vulnerable").map(
-						(stat: { image: string }) => (
-							<div className="pokemon-type">
+						(stat: { image: string }, index) => (
+							<div key={index} className="pokemon-type">
 								<img
 									src={stat.image}
 									alt=""
@@ -104,7 +108,7 @@ const CompareContainer = ({
 		<div className="compare-container">
 			{isEmpty && (
 				<div className="empty">
-					<button>
+					<button onClick={() => navigate("/search")}>
 						<FaPlus />
 					</button>
 					<h3>Add Pokemon to compare</h3>
@@ -129,18 +133,20 @@ const CompareContainer = ({
 							<div className="pokemon-types">
 								<h4 className="pokemon-type-title">type</h4>
 								<div className="pokemon-type-icons">
-									{pokemon?.types.map((type: pokemonInterfaceType) => {
-										const keys = Object.keys(type);
-										return (
-											<div className="pokemon-type">
-												<img
-													className="pokemon-type-image"
-													src={type[keys[0]].image}
-													alt="type"
-												/>
-											</div>
-										);
-									})}
+									{pokemon?.types.map(
+										(type: pokemonInterfaceType, index) => {
+											const keys = Object.keys(type);
+											return (
+												<div key={index} className="pokemon-type">
+													<img
+														className="pokemon-type-image"
+														src={type[keys[0]].image}
+														alt="type"
+													/>
+												</div>
+											);
+										}
+									)}
 								</div>
 							</div>
 
@@ -151,8 +157,20 @@ const CompareContainer = ({
 					{/* Compare buttons */}
 					<div className="compare-action-buttons">
 						<button className="compare-btn">Add</button>
-						<button className="compare-btn">View</button>
-						<button className="compare-btn">Remove</button>
+						<button
+							onClick={() => navigate(`/pokemon/${pokemon?.id}`)}
+							className="compare-btn"
+						>
+							View
+						</button>
+						<button
+							onClick={() =>
+								dispatch(removeFromCompare({ id: pokemon?.id }))
+							}
+							className="compare-btn"
+						>
+							Remove
+						</button>
 					</div>
 				</div>
 			)}
