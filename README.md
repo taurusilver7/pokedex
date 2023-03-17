@@ -72,7 +72,9 @@ Setup the Toast notification in AppSlice reducer actions (setToast & clearToast)
 
 Populate the compare page with a container to add pokemon to compare at its initial state. If a pokemon is already added to compareQueue global state, replace the blank container with the pokemon data.
 
+Populate the compare block with the pokemon stats & images. Create a stats array withe Sets to specially segragate the different stats in a pokemon object.
 
+Create the action buttons that navigate to different pages in the application or perform CRUD operation on the pokemon in an accound.
 
 ## Learn More
 
