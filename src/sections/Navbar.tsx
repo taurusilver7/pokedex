@@ -2,25 +2,31 @@ import React, { useEffect } from "react";
 import pokeballIcon from "../assets/pokeball-icon.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link, useLocation } from "react-router-dom";
+import { useAppSelector } from "../app/hooks";
 
 const Navbar = () => {
+	const { compareQueue } = useAppSelector(({ pokemon }) => pokemon);
 	const location = useLocation();
 	const navRoutes = [
 		{
 			name: "Search",
 			route: "/search",
+			toast: false,
 		},
 		{
 			name: "Pokemon",
 			route: "/pokemon",
+			toast: false,
 		},
 		{
 			name: "Compare",
 			route: "/compare",
+			toast: true,
 		},
 		{
 			name: "List",
 			route: "/list",
+			toast: false,
 		},
 	];
 
@@ -45,11 +51,16 @@ const Navbar = () => {
 			<div className="data">
 				<ul>
 					<div className="underline"></div>
-					{/* <div className="underline"></div> */}
-					{/* <div className="underline"></div> */}
-					{navRoutes.map(({ name, route }, index) => (
+					<div className="underline"></div>
+					<div className="underline"></div>
+					{navRoutes.map(({ name, route, toast }, index) => (
 						<Link to={route} key={index}>
 							<li>{name}</li>
+							{toast && compareQueue.length > 0 && (
+								<div className="toast-notification">
+									{compareQueue?.length}
+								</div>
+							)}
 						</Link>
 					))}
 				</ul>
