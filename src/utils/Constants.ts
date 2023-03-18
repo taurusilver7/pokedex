@@ -2,6 +2,8 @@
 
 export const pokeAPI = process.env.REACT_APP_SERVER_URL;
 export const pokemonRoute = `${pokeAPI}/pokemon?limit=5000`;
+export const pokeRoute = `${pokeAPI}/pokemon`;
+export const pokemonSpeciesRoute = `${pokeAPI}/pokemon-species`;
 
 export const pokemonTabs = {
 	description: "description",
