@@ -30,7 +30,7 @@ function App() {
 				autoClose: 2000,
 				pauseOnHover: true,
 				draggable: false,
-				hideProgressBar: true,
+				// hideProgressBar: true,
 				type: "info",
 				theme: "dark",
 			};
