@@ -102,11 +102,17 @@ Create a new reducer `getUserPokemon`to get data from the database & update the 
 
 Start the pokemon page with a dependency. Add [extract-colors](https://www.npmjs.com/package/extract-colors) & customize the extract options.
 
-Create a image element & set its source to the id value from params. the params value is obtained from the events in other pages that led to the pokemon page.
+Create a function `getPokemonInfo` to populate the pokemon information from different api-requests.
 
-Create a function to extract the most dominant color from a pokemon image & set the root accent property to the application.
+Create a image element & set its source to the id value from params. The params value is obtained from the events in other pages that led to the pokemon page.
 
-Create a function `getPokemonInfo` to populate the remaining information on the pokemon from different api-requests.
+Create a function to extract the most dominant color from a pokemon image & assign the color to a sass variable to apply it at multiple points.
+
+Create a function to get the evolution_details of a pokemon using useCallback() hook to loop over a data multiple times.
+
+Get the pokemon abilities & moves from the api-route. Get a speices route & its evolution_chains from another api_route.
+
+get the location_encounters, and stats from the other api_routes. Dispatch the details to setCurrentPokemon global variable from pokemonSlice.
 
 ## Learn More
 
