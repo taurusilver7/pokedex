@@ -94,7 +94,7 @@ Add the reducer function `addPokemonToList` to the CardGrid (FaPlus) event & com
 
 To make the auth-state unfettered with refreshes, add an authStateChange event to update the userInfo with the user credentials.
 
-Create a new reducer to `getUserPokemon` from the database & update the global state userPokemon to populate them in the List page.
+Create a new reducer `getUserPokemon`to get data from the database & update the global state userPokemon to populate them in the List page. dispatch the getUserPokemon reducer from the List page to get the lastest pokemon list for the user.
 
 ## Learn More
 
