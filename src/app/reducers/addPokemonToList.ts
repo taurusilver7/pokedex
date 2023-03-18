@@ -39,9 +39,8 @@ export const addPokemonToList = createAsyncThunk(
 				}
 			);
 			if (index === -1) {
-
 				let types: string[] = [];
-				
+
 				if (!pokemon.stats) {
 					pokemon.types.forEach((type: any) =>
 						types.push(Object.keys(type).toString())
@@ -55,10 +54,10 @@ export const addPokemonToList = createAsyncThunk(
 				});
 				// dispatch a getUserPokmeon reducer
 				await dispatch(getUserPokemon());
-				dispatch(setToast(`${pokemon.name} added to your collection`));
+				dispatch(setToast(`${pokemon.name} has been added to collection`));
 			} else {
 				dispatch(
-					setToast(`${pokemon.name} already a part of your collection`)
+					setToast(`${pokemon.name} has already been in your collection`)
 				);
 			}
 		} catch (error) {
