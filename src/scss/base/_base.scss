@@ -15,5 +15,5 @@ body {
 
 #root {
 	--accent: #f51313;
-	--accent-dark: color.scale($accent-color, $lightness: -30%);
+	--accent-dark: color.scale($accent, $lightness: -30%);
 }
