@@ -98,6 +98,16 @@ To make the auth-state unfettered with refreshes, add an authStateChange event t
 
 Create a new reducer `getUserPokemon`to get data from the database & update the global state userPokemon to populate them in the List page. dispatch the getUserPokemon reducer from the List page to get the lastest pokemon list for the user.
 
+## Pokemon
+
+Start the pokemon page with a dependency. Add [extract-colors](https://www.npmjs.com/package/extract-colors) & customize the extract options.
+
+Create a image element & set its source to the id value from params. the params value is obtained from the events in other pages that led to the pokemon page.
+
+Create a function to extract the most dominant color from a pokemon image & set the root accent property to the application.
+
+Create a function `getPokemonInfo` to populate the remaining information on the pokemon from different api-requests.
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
