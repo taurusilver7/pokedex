@@ -11,8 +11,9 @@ export interface AppInitialStateType {
 // Type for the PokemonSlice Initial State Values.
 export interface PokemonInitialStateType {
 	allPokemon: undefined | genericPokemonType[];
-	randomPokemon: undefined | generatedPokemonType[];
+	randomPokemon: generatedPokemonType[] | undefined;
 	compareQueue: generatedPokemonType[];
+	userPokemons: userPokemonsType[]
 }
 
 // For generating random Pokemon results in the search page at render. Type for getPokemonData for random pokemon.
@@ -53,7 +54,7 @@ export interface pokemonInterfaceType {
 	};
 }
 
-export interface userPokemonType extends generatedPokemonType {
+export interface userPokemonsType extends generatedPokemonType {
 	firebaseId?: string;
 }
 
