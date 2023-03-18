@@ -9,7 +9,7 @@ const MyList = () => {
 	return (
 		<div className="list">
 			{/* Login component or Pokemon grid based on the uerInfo state value */}
-			<Login />
+			{!userInfo && <Login />}
 		</div>
 	);
 };
