@@ -86,6 +86,16 @@ The List page has either the list of the pokemon a user has added, or the login 
 
 Add a global state `userInfo` in the AppSlice, and create a reducer function to set the user status & email authentication.
 
+Create a reducer function `addPokemonToList` with the props taking interface type `pokemonStatType`.
+
+Add the pokeman stats (id, name, types) to the pokemonRefList in firebase under the user email account. Dispatch a toast notification stating the addition or already existing status based on the collection data.
+
+Add the reducer function `addPokemonToList` to the CardGrid (FaPlus) event & compare `add` event.
+
+To make the auth-state unfettered with refreshes, add an authStateChange event to update the userInfo with the user credentials.
+
+Create a new reducer to `getUserPokemon` from the database & update the global state userPokemon to populate them in the List page.
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
