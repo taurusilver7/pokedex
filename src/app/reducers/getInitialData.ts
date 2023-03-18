@@ -1,4 +1,4 @@
-// Get initial pokemon data from the api
+// Get pokemon data from the api for the search page.
 
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";

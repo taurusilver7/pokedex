@@ -8,6 +8,7 @@ import {
 } from "../../utils/Types";
 import { setToast } from "../slices/AppSlice";
 import { RootState } from "../store";
+import { getUserPokemon } from "./getUserPokemon";
 
 export const addPokemonToList = createAsyncThunk(
 	"/pokemon/addPokemon",
@@ -38,7 +39,9 @@ export const addPokemonToList = createAsyncThunk(
 				}
 			);
 			if (index === -1) {
+
 				let types: string[] = [];
+				
 				if (!pokemon.stats) {
 					pokemon.types.forEach((type: any) =>
 						types.push(Object.keys(type).toString())
@@ -51,6 +54,7 @@ export const addPokemonToList = createAsyncThunk(
 					email: userInfo.email,
 				});
 				// dispatch a getUserPokmeon reducer
+				await dispatch(getUserPokemon());
 				dispatch(setToast(`${pokemon.name} added to your collection`));
 			} else {
 				dispatch(
