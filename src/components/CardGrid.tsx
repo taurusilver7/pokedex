@@ -6,6 +6,7 @@ import { useAppDispatch } from "../app/hooks";
 import { addToCompare } from "../app/slices/PokeSlice";
 import { setToast } from "../app/slices/AppSlice";
 import { addPokemonToList } from "../app/reducers/addPokemonToList";
+import { removePokemonFromList } from "../app/reducers/removePokemonFromList";
 
 const CardGrid = ({ pokemons }: { pokemons: userPokemonsType[] }) => {
 	const location = useLocation();
@@ -16,6 +17,7 @@ const CardGrid = ({ pokemons }: { pokemons: userPokemonsType[] }) => {
 		dispatch(addToCompare(data));
 		dispatch(setToast(`${data.name} has been added to compare !`));
 	};
+
 	return (
 		<div className="card-grid-container">
 			<div className="card-grid">
@@ -26,11 +28,31 @@ const CardGrid = ({ pokemons }: { pokemons: userPokemonsType[] }) => {
 							{/* Conditional Render buttons */}
 							<div className="card-list">
 								{location.pathname.includes("/pokemon") ? (
-									<FaPlus className="plus" onClick={() => dispatch(addPokemonToList(data))} />
+									<FaPlus
+										className="plus"
+										onClick={() => dispatch(addPokemonToList(data))}
+									/>
 								) : location.pathname.includes("/search") ? (
-									<FaPlus className="plus" onClick={() => dispatch(addPokemonToList(data))} />
+									<FaPlus
+										className="plus"
+										onClick={() => dispatch(addPokemonToList(data))}
+									/>
 								) : (
-									<FaTrash className="trash" />
+									<FaTrash
+										onClick={async () => {
+											await dispatch(
+												removePokemonFromList({
+													id: data.firebaseId!,
+												})
+											);
+											dispatch(
+												setToast(
+													`${data.name} has been removed from collection`
+												)
+											);
+										}}
+										className="trash"
+									/>
 								)}
 							</div>
 
