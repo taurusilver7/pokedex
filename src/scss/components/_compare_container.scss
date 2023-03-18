@@ -12,11 +12,12 @@
 			cursor: pointer;
 			border-radius: 10rem;
 			padding: 2rem;
+			margin: 1rem;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 			border: none;
-			background-color: var(--accent);
+			background-color: var(--accent-color);
 			transition: all 0.2s;
 			svg {
 				font-size: 5rem;
