@@ -1,17 +1,18 @@
-import { pokemonInterfaceType, userPokemonType } from "../utils/Types";
+import { pokemonInterfaceType, userPokemonsType } from "../utils/Types";
 import { IoGitCompare } from "react-icons/io5";
 import { FaPlus, FaTrash } from "react-icons/fa";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../app/hooks";
 import { addToCompare } from "../app/slices/PokeSlice";
 import { setToast } from "../app/slices/AppSlice";
+import { addPokemonToList } from "../app/reducers/addPokemonToList";
 
-const CardGrid = ({ pokemons }: { pokemons: userPokemonType[] }) => {
+const CardGrid = ({ pokemons }: { pokemons: userPokemonsType[] }) => {
 	const location = useLocation();
 	const navigate = useNavigate();
 	const dispatch = useAppDispatch();
 
-	const handleCompare = (data: userPokemonType) => {
+	const handleCompare = (data: userPokemonsType) => {
 		dispatch(addToCompare(data));
 		dispatch(setToast(`${data.name} has been added to compare !`));
 	};
@@ -20,14 +21,14 @@ const CardGrid = ({ pokemons }: { pokemons: userPokemonType[] }) => {
 			<div className="card-grid">
 				{pokemons &&
 					pokemons.length > 0 &&
-					pokemons?.map((data: userPokemonType) => (
+					pokemons?.map((data: userPokemonsType) => (
 						<div key={data.id} className="card">
 							{/* Conditional Render buttons */}
 							<div className="card-list">
 								{location.pathname.includes("/pokemon") ? (
-									<FaPlus className="plus" />
+									<FaPlus className="plus" onClick={() => dispatch(addPokemonToList(data))} />
 								) : location.pathname.includes("/search") ? (
-									<FaPlus className="plus" />
+									<FaPlus className="plus" onClick={() => dispatch(addPokemonToList(data))} />
 								) : (
 									<FaTrash className="trash" />
 								)}
