@@ -44,6 +44,8 @@ Create two redux slices in /app directory (AppSlice & PokemonSlice). A slice dec
 
 Pull the required pokemon data from [pokeapi](https://pokeapi.co/), an easily accessible, modern restful API service.
 
+## Search
+
 Create a reducer function that uses the createAsyncThunk to fetch the initial response data from the API.
 
 The useAppSelector() hook is for getting the state data from the store while the useAppDispatch() hook is for calling the reducer function to perform actions on the state data.
