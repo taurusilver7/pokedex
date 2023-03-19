@@ -1,6 +1,6 @@
 // @ts-nocheck
 import axios from "axios";
-import {extractColors} from "extract-colors";
+import { extractColors } from "extract-colors";
 import { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
@@ -106,11 +106,12 @@ const Pokemon = () => {
 			const encounters = [];
 			// A function to get evolution data from the evaluation_chain
 			const evolution = getEvolutionData(evolutionData.chain);
+			console.log("evolution", evolution);
 			let evolutionLevel;
 
 			evolutionLevel = evolution.find(
 				({ pokemon }) => pokemon.name === data.name
-			).level;
+			)?.level;
 
 			dataEncounters.forEach((encounter) => {
 				encounters.push(

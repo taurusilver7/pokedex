@@ -7,7 +7,7 @@ const Description = () => {
 		({ pokemon: { currentPokemon } }) => currentPokemon
 	);
 	return (
-		<div>
+		<div className="description">
 			{/* Pokemon Info */}
 			<Info data={pokemonData} />
 			{pokemonData && <PokemonContainer image={pokemonData.image} />}
