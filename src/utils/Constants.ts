@@ -1,7 +1,7 @@
 // Static data for the pokemon api calls
 
 export const pokeAPI = process.env.REACT_APP_SERVER_URL;
-export const pokemonRoute = `${pokeAPI}/pokemon?limit=5000`;
+export const pokemonRoute = `${pokeAPI}/pokemon?limit=2000`;
 export const pokeRoute = `${pokeAPI}/pokemon`;
 export const pokemonSpeciesRoute = `${pokeAPI}/pokemon-species`;
 
