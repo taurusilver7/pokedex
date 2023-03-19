@@ -13,7 +13,7 @@ export const getInitalData = createAsyncThunk(
 			// console.log({ data });
 			return data.results;
 		} catch (error) {
-			console.log(error);
+			console.log({ error });
 		}
 	}
 );
