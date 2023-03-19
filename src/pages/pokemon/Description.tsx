@@ -3,14 +3,12 @@ import { useAppSelector } from "../../app/hooks";
 import { Info, PokemonContainer } from "../../components";
 
 const Description = () => {
-	const pokemonData = useAppSelector(
-		({ pokemon: { currentPokemon } }) => currentPokemon
-	);
+	const { currentPokemon } = useAppSelector(({ pokemon }) => pokemon);
 	return (
 		<div className="description">
 			{/* Pokemon Info */}
-			<Info data={pokemonData} />
-			{pokemonData && <PokemonContainer image={pokemonData.image} />}
+			<Info data={currentPokemon} />
+			{currentPokemon && <PokemonContainer image={currentPokemon.image} />}
 		</div>
 	);
 };

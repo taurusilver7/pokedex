@@ -40,7 +40,7 @@ const Pokemon = () => {
 			if (!evolutionChain.evolves_to.length) {
 				return evolutionData.push({
 					pokemon: {
-						...evolutionData.species,
+						...evolutionChain.species,
 						url: evolutionChain.species.url.replace(
 							"pokemon-species",
 							"pokemon"
@@ -84,6 +84,7 @@ const Pokemon = () => {
 	const getPokemonInfo = useCallback(
 		async (image) => {
 			const { data } = await axios.get(`${pokeRoute}/${params.id}`);
+			// console.log("pokemonData", data);
 
 			// Pokemon abilities from data
 			const pokemonAbilities = {
@@ -103,17 +104,20 @@ const Pokemon = () => {
 			} = await axios.get(`${pokemonSpeciesRoute}/${data.id}`);
 			const { data: evolutionData } = await axios.get(evolutionURL);
 
-			const encounters = [];
+			// console.log("EvolutionData", evolutionData);
+
 			// A function to get evolution data from the evaluation_chain
 			const evolution = getEvolutionData(evolutionData.chain);
-			console.log("evolution", evolution);
-			let evolutionLevel;
+			// console.log("evolution", evolution);
 
+			let evolutionLevel;
 			evolutionLevel = evolution.find(
 				({ pokemon }) => pokemon.name === data.name
-			)?.level;
+			).level;
 
+			const encounters = [];
 			dataEncounters.forEach((encounter) => {
+				// console.log("encounter", encounter);
 				encounters.push(
 					encounter.location_area.name.toUpperCase().split("-").join(" ")
 				);
