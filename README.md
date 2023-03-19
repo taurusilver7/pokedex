@@ -114,6 +114,8 @@ Get the pokemon abilities & moves from the api-route. Get a speices route & its 
 
 get the location_encounters, and stats from the other api_routes. Dispatch the details to setCurrentPokemon global variable from pokemonSlice.
 
+The Description page has Info & Pokemon container components
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
