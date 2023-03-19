@@ -118,6 +118,8 @@ The Description page has Info & Pokemon container components. The container has 
 
 Create a statsArray for the pokemon for its stats & type from the hard-coded typeArray, and populate the stats in the Info Component. Style the description page for various breakpoints.
 
+The Evolution page has the pokemon evolution stages. The location has the location_capture_ares, & the moves tab has the pokemon moves & abilities populated.
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
