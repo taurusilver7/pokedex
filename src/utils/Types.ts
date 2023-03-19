@@ -36,7 +36,7 @@ export interface currentPokemonType {
 	id: number;
 	name: string;
 	types: pokemonInterfaceType[];
-	images: string;
+	image: string;
 	stats: pokemonStatsType[];
 	encounters: string[];
 	evolutionLevel: number;
