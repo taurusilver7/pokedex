@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useAppDispatch } from "../app/hooks";
 import { addPokemonToList } from "../app/reducers/addPokemonToList";
+import { pokemonTypes } from "../utils";
 import { currentPokemonType, pokemonStatsType } from "../utils/Types";
 
 const Info = ({ data }: { data: currentPokemonType | undefined }) => {
@@ -13,6 +14,19 @@ const Info = ({ data }: { data: currentPokemonType | undefined }) => {
 			bar.style.width = "10rem";
 		});
 	}, []);
+
+	const createStatsArray = (types: string[], statType: string) => {
+		const statSet = new Set();
+		types.forEach((type: string) => {
+			// @ts-ignore
+			pokemonTypes[type][statType].forEach((stat: strin) => {
+				if (!statSet.has(stat)) {
+					statSet.add(stat[0].toUpperCase() + stat.slice(1));
+				}
+			});
+		});
+		return Array.from(statSet);
+	};
 
 	return (
 		<>
@@ -55,7 +69,10 @@ const Info = ({ data }: { data: currentPokemonType | undefined }) => {
 						</li>
 					</ul>
 				}
-				<button className="add-pokemon" onClick={() => dispatch(addPokemonToList(data!))}>
+				<button
+					className="add-pokemon"
+					onClick={() => dispatch(addPokemonToList(data!))}
+				>
 					Add Pokemon
 				</button>
 			</div>
