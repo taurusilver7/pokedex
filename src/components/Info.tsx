@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 import { useAppDispatch } from "../app/hooks";
 import { addPokemonToList } from "../app/reducers/addPokemonToList";
+import { setPokemonTab } from "../app/slices/AppSlice";
 import { pokemonTypes } from "../utils";
+import { pokemonTabs } from "../utils/Constants";
 import { currentPokemonType, pokemonStatsType } from "../utils/Types";
 
 const Info = ({ data }: { data: currentPokemonType | undefined }) => {
@@ -34,7 +36,11 @@ const Info = ({ data }: { data: currentPokemonType | undefined }) => {
 				<h1 className="name">{data?.name}</h1>
 				<h3>Type: {data?.types.join(" - ")}</h3>
 				<h3>Evolution: {data?.evolutionLevel}</h3>
-				<button>See next evolution</button>
+				<button
+					onClick={() => dispatch(setPokemonTab(pokemonTabs.evolution))}
+				>
+					See next evolution
+				</button>
 			</div>
 
 			<div className="stats">
@@ -52,20 +58,40 @@ const Info = ({ data }: { data: currentPokemonType | undefined }) => {
 				{
 					<ul>
 						<li>
-							<span>Strengths: </span>
-							<span></span>
+							<span>Strong: </span>
+							<span>
+								{createStatsArray(
+									data?.types as unknown as string[],
+									"strength"
+								).join(", ")}
+							</span>
 						</li>
 						<li>
-							<span>Weakness: </span>
-							<span></span>
+							<span>Weak: </span>
+							<span>
+								{createStatsArray(
+									data?.types as unknown as string[],
+									"weakness"
+								).join(", ")}
+							</span>
 						</li>
 						<li>
 							<span>Resistance: </span>
-							<span></span>
+							<span>
+								{createStatsArray(
+									data?.types as unknown as string[],
+									"resistance"
+								).join(", ")}
+							</span>
 						</li>
 						<li>
 							<span>Vulnerable: </span>
-							<span></span>
+							<span>
+								{createStatsArray(
+									data?.types as unknown as string[],
+									"vulnerable"
+								).join(", ")}
+							</span>
 						</li>
 					</ul>
 				}

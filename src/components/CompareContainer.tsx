@@ -143,6 +143,7 @@ const CompareContainer = ({
 														className="pokemon-type-image"
 														src={type[keys[0]].image}
 														alt="type"
+														loading="lazy"
 													/>
 												</div>
 											);
