@@ -1,9 +1,18 @@
-import React from 'react'
+import React from "react";
+import { useAppSelector } from "../../app/hooks";
+import { Info, PokemonContainer } from "../../components";
 
 const Description = () => {
-  return (
-    <div>Description</div>
-  )
-}
+	const pokemonData = useAppSelector(
+		({ pokemon: { currentPokemon } }) => currentPokemon
+	);
+	return (
+		<div>
+			{/* Pokemon Info */}
+			<Info data={pokemonData} />
+			{pokemonData && <PokemonContainer image={pokemonData.image} />}
+		</div>
+	);
+};
 
-export default Description
+export default Description;
