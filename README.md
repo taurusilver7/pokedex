@@ -114,7 +114,9 @@ Get the pokemon abilities & moves from the api-route. Get a speices route & its 
 
 get the location_encounters, and stats from the other api_routes. Dispatch the details to setCurrentPokemon global variable from pokemonSlice.
 
-The Description page has Info & Pokemon container components
+The Description page has Info & Pokemon container components. The container has the image element & the circular designs around it. The info component has 4 blocks with each on the corner of the page with absolute positioning & custom styled corresponding to the pokemon dominating color.
+
+Create a statsArray for the pokemon for its stats & type from the hard-coded typeArray, and populate the stats in the Info Component. Style the description page for various breakpoints.
 
 ## Learn More
 
