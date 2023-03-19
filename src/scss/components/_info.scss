@@ -8,7 +8,16 @@
 	text-transform: uppercase;
 	&::before {
 		height: 0.3rem;
-		width: 9rem;
+		width: 10rem;
+		content: "";
+		background-color: var(--accent-color);
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	&::after {
+		height: 6rem;
+		width: 0.25rem;
 		content: "";
 		background-color: var(--accent-color);
 		position: absolute;
@@ -86,7 +95,16 @@
 	width: 30rem;
 	&::before {
 		height: 0.3rem;
-		width: 9rem;
+		width: 10rem;
+		content: "";
+		background-color: var(--accent-color);
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	&::after {
+		height: 6rem;
+		width: 0.25rem;
 		content: "";
 		background-color: var(--accent-color);
 		position: absolute;
